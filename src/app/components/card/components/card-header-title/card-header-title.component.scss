@@ -1,0 +1,39 @@
+@mixin br-inverted-left  {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: transparent;
+  box-shadow: -16px -16px var(--card-border);
+}
+
+div {
+  background: var(--card-border);
+  border-bottom-right-radius: var(--card-border-radius);
+  box-shadow: -2px -2px var(--card-border);
+  padding: 4px 10px 4px 6px;
+  position: relative;
+  z-index: 1;
+
+  p {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  h2 {
+    color: var(--card-text-primary);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .5px;
+  }
+
+  &::after {
+    @include br-inverted-left;
+    top: 0;
+    right: -32px;
+  }
+}

@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  margin: auto;
+  padding: 2.4rem 1.6rem;
+
+
+  &-copyright {
+    max-width: 140px;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 576px) {
+      max-width: 100%;
+    }
+  }
+
+  &-links {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  a {
+    cursor: pointer;
+    color: var(--text-secondary);
+    text-decoration: none;
+
+    i-feather {
+      width: 3rem;
+      height: 3rem;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      i-feather {
+        transform: scale(1.2);
+        filter: drop-shadow(0px 0px 1px var(--text-secondary));
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@mixin br-inverted-left  {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: transparent;
+  box-shadow: -16px -16px var(--card-border);
+}
+
+.card__header {
+  background: var(--card-image-bg);
+  border-radius: var(--card-border-radius);
+  height: 100%;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &::after {
+      @include br-inverted-left;
+      bottom: -32px;
+      left: 0;
+    }
+  }
+}

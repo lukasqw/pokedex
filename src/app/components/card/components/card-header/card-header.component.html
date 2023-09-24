@@ -1,0 +1,14 @@
+<div class="card__header">
+  <div class="card__header__wrap">
+    <app-card-header-title
+      [index]="pokemon.index"
+      [name]="pokemon.name"
+    ></app-card-header-title>
+    <app-card-header-type [types]="pokemon.types"></app-card-header-type>
+  </div>
+  <app-card-header-img
+    [sprites]="pokemon.sprites"
+    [name]="pokemon.name"
+    [type]="pokemon.primaryType"
+  ></app-card-header-img>
+</div>

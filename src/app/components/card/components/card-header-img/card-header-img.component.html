@@ -1,0 +1,19 @@
+<div>
+  <img [@flip]="flipAnimation" [src]="sprite" [alt]="name" />
+  <app-pokemon-icon [type]="type"></app-pokemon-icon>
+  <div class="buttons-wrap">
+    <button (click)="rotate()" title="virar" [@rotate]="front.toString()">
+      <i-feather name="rotate-cw"></i-feather>
+    </button>
+    <button (click)="changeShiny()" title="shiny">
+      <i-feather name="star" [ngClass]="{ active: shiny }"></i-feather>
+    </button>
+    <button
+      *ngIf="sprites.front_female"
+      (click)="changeGender()"
+      title="gênero"
+    >
+      <app-pokemon-icon [type]="iconGender"></app-pokemon-icon>
+    </button>
+  </div>
+</div>

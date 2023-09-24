@@ -1,0 +1,85 @@
+{
+  "iconImageFiles": [
+    {
+			"iconName": "pokemon-bug",
+			"iconPath": "/assets/icons/icon-bug.svg"
+		},
+    {
+			"iconName": "pokemon-dark",
+			"iconPath": "/assets/icons/icon-dark.svg"
+		},
+    {
+			"iconName": "pokemon-dragon",
+			"iconPath": "/assets/icons/icon-dragon.svg"
+		},
+    {
+			"iconName": "pokemon-electric",
+			"iconPath": "/assets/icons/icon-electric.svg"
+		},
+    {
+			"iconName": "pokemon-fairy",
+			"iconPath": "/assets/icons/icon-fairy.svg"
+		},
+    {
+			"iconName": "pokemon-fighting",
+			"iconPath": "/assets/icons/icon-fighting.svg"
+		},
+    {
+			"iconName": "pokemon-fire",
+			"iconPath": "/assets/icons/icon-fire.svg"
+		},
+    {
+			"iconName": "pokemon-flying",
+			"iconPath": "/assets/icons/icon-flying.svg"
+		},
+    {
+			"iconName": "pokemon-ghost",
+			"iconPath": "/assets/icons/icon-ghost.svg"
+		},
+    {
+			"iconName": "pokemon-grass",
+			"iconPath": "/assets/icons/icon-grass.svg"
+		},
+    {
+			"iconName": "pokemon-ground",
+			"iconPath": "/assets/icons/icon-ground.svg"
+		},
+    {
+			"iconName": "pokemon-ice",
+			"iconPath": "/assets/icons/icon-ice.svg"
+		},
+    {
+			"iconName": "pokemon-normal",
+			"iconPath": "/assets/icons/icon-normal.svg"
+		},
+    {
+			"iconName": "pokemon-poison",
+			"iconPath": "/assets/icons/icon-poison.svg"
+		},
+    {
+			"iconName": "pokemon-psychic",
+			"iconPath": "/assets/icons/icon-psychic.svg"
+		},
+    {
+			"iconName": "pokemon-rock",
+			"iconPath": "/assets/icons/icon-rock.svg"
+		},
+    {
+			"iconName": "pokemon-steel",
+			"iconPath": "/assets/icons/icon-steel.svg"
+		},
+    {
+			"iconName": "pokemon-water",
+			"iconPath": "/assets/icons/icon-water.svg"
+		},
+    {
+			"iconName": "pokemon-female",
+			"iconPath": "/assets/icons/gender/female.svg"
+		},
+    {
+			"iconName": "pokemon-male",
+			"iconPath": "/assets/icons/gender/male.svg"
+		}
+  ],
+  "customIcons": []
+}

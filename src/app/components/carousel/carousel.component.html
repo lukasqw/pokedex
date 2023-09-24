@@ -1,0 +1,29 @@
+<div class="carousel-wrap" #mainElement>
+  <swiper-container
+    fmSwiper
+    init="false"
+    class="carousel"
+    [config]="config"
+    #swiper
+  >
+    <swiper-slide
+      class="card type--{{ poke.pokemon.primaryType }}"
+      *ngFor="let poke of pokemonsUrlSlider; let i = index"
+    >
+      <app-card
+        [isShow]="isShowCard(i)"
+        [currentIndex]="activeIndex"
+        [(pokemon)]="poke.pokemon"
+      ></app-card>
+    </swiper-slide>
+    <div class="carousel-options">
+      <button class="carousel-options-btn-prev">
+        <i-feather name="arrow-left"></i-feather>
+      </button>
+      <div class="carousel-options-pagination"></div>
+      <button class="carousel-options-btn-next">
+        <i-feather name="arrow-right"></i-feather>
+      </button>
+    </div>
+  </swiper-container>
+</div>

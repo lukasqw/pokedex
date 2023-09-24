@@ -1,0 +1,8 @@
+<div class="type">
+  <div *ngFor="let type of types" class="type__icon type--{{ type.name }}">
+    <svg-icon
+      name="pokemon-{{ type.name }}"
+      [svgStyle]="{ 'width.px': 20, 'height.px': 20 }"
+    ></svg-icon>
+  </div>
+</div>

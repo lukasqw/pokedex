@@ -1,0 +1,18 @@
+:host {
+  .card {
+    background: var(--card-border);
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: var(--card-border-radius);
+    padding: 8px;
+    color: var(--card-text-primary);
+
+    &__wrapper {
+      border-radius: var(--card-border-radius);
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1.3fr 1fr;
+      gap: 8px;
+    }
+  }
+}

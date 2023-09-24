@@ -1,0 +1,21 @@
+.type {
+  display: flex;
+  padding: 8px 8px 0 0 ;
+  gap: 8px;
+
+  &__icon {
+    background: var(--card-icon-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: 2px solid var(--card-icon-secondary);
+    display: grid;
+    place-items: center;
+
+    svg-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--card-icon-white);
+    }
+  }
+}

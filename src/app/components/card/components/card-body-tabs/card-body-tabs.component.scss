@@ -1,0 +1,40 @@
+div {
+  display: flex;
+  background: var(--card-border);
+
+  .tab {
+    color: var(--card-text-primary);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    border: none;
+    background: var(--card-body-secondary);
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+    box-shadow: 0px 2px var(--card-body-secondary);
+    padding: 8px 12px 6px 12px;
+    position: relative;
+    letter-spacing: .5px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      background-color: transparent;
+      box-shadow: -16px 16px var(--card-body-secondary);
+      bottom: 0;
+      right: -32px;
+    }
+
+    &--active {
+      z-index: 1;
+      background: var(--card-body-primary);
+      box-shadow: 0px 2px var(--card-body-primary);
+      &::after {
+        box-shadow: -16px 16px var(--card-body-primary);
+      }
+    }
+  }
+}

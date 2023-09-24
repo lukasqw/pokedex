@@ -1,0 +1,36 @@
+:host {
+
+  .home--light {
+    --background-color: #F2F2F2;
+    --text-primary: #1E1E1E;
+    --text-secondary: #656565;
+    --input-bg: #F5F5F5;
+    --input-stroke: #9E9E9E;
+    --input-text: #1E1E1E;
+    --img-background: url('../../../assets/background/patter-pokemon-light.png')
+  }
+
+  .home--dark {
+    --background-color: #1E1E1E;
+    --text-primary: #F2F2F2;
+    --text-secondary: #A6A6A6;
+    --input-bg: #404040;
+    --input-stroke: #666666;
+    --input-text: #F2F2F2;
+    --img-background: url('../../../assets/background/patter-pokemon-dark.png')
+  }
+
+  .home {
+    background-color: var(--background-color);
+    background-image: var(--img-background);
+    height: 100vh;
+    display: grid;
+    grid-template:
+      'header'
+      'main'
+      'footer';
+    grid-template-rows: auto 1fr auto;
+    transition: 0.2s ease-in-out;
+}
+
+}

@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+@mixin default {
+  --card-width: 300px;
+  --card-height: 450px;
+  --card-border-radius: 16px;
+  --card-spacing: 16px;
+  --card-icon-white: #FFFFFF;
+}
+
+.type {
+    &--fire {
+      --card-border: #FFE389;
+      --card-body-primary: #FFB92E;
+      --card-body-secondary: #FFC85C;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #FFC300 0%, #FF8800 100%);
+      --card-progress-bar: linear-gradient(90deg, #FF8800 0%, #FFA200 100%);
+      --card-text-primary: #342D2A;
+      --card-text-secondary: #403834;
+      --card-icon-primary: #FF6D2E;
+      --card-icon-secondary: #FF4E03;
+      @include default;
+    }
+
+    &--grass {
+      --card-border: #99E573;
+      --card-body-primary: #73CF55;
+      --card-body-secondary: #81D665;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #8EE537 0%, #40BF26 100%);
+      --card-progress-bar: linear-gradient(90deg, #219E08 0%, #70CC14 100%);
+      --card-text-primary: #293329;
+      --card-text-secondary: #3F4C3F;
+      --card-icon-primary: #4DD420;
+      --card-icon-secondary: #5DE85D;
+      @include default;
+    }
+
+    &--water {
+      --card-border: #AFD4FA;
+      --card-body-primary: #78BBFF;
+      --card-body-secondary: #86C9FC;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #73D0FF 0%, #409FFF 100%);
+      --card-progress-bar: linear-gradient(90deg, #4080FF 0%, #82B2FF 100%);
+      --card-text-primary: #293033;
+      --card-text-secondary: #353C40;
+      --card-icon-primary: #268BFF;
+      --card-icon-secondary: #66B2FF;
+      @include default;
+    }
+
+    &--electric {
+      --card-border: #FFEB89;
+      --card-body-primary: #FCCE4E;
+      --card-body-secondary: #FAD66B;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #F7D600 0%, #FAAF00 100%);
+      --card-progress-bar: linear-gradient(90deg, #FFAA00 0%, #FFBF00 100%);
+      --card-text-primary: #333129;
+      --card-text-secondary: #4C4A3F;
+      --card-icon-primary: #FFCC00;
+      --card-icon-secondary: #FFE773;
+      @include default;
+    }
+
+    &--ghost {
+      --card-border: #A663E5;
+      --card-body-primary: #7D43A8;
+      --card-body-secondary: #9350C7;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #B242EB 0%, #803BB2 100%);
+      --card-progress-bar: linear-gradient(90deg, #6D24B2 0%, #A234D1 100%);
+      --card-text-primary: #FFFFFF;
+      --card-text-secondary: #E8DFF7;
+      --card-icon-primary: #9738DD;
+      --card-icon-secondary: #AD5EF7;
+      @include default;
+    }
+
+    &--dark {
+      --card-border: #726B99;
+      --card-body-primary: #433D66;
+      --card-body-secondary: #5A538A;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #5A5196 0%, #2A2547 100%);
+      --card-progress-bar: linear-gradient(90deg, #211B40 0%, #473C8C 100%);
+      --card-text-primary: #FFFFFF;
+      --card-text-secondary: #D7D3EB;
+      --card-icon-primary: #2E2552;
+      --card-icon-secondary: #726B99;
+      @include default;
+    }
+
+    &--poison {
+      --card-border: #B15ACC;
+      --card-body-primary: #9031A3;
+      --card-body-secondary: #9C45AD;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #AC20D6 0%, #713C80 100%);
+      --card-progress-bar: linear-gradient(90deg, #572466 0%, #9813BF 100%);
+      --card-text-primary: #FFFFFF;
+      --card-text-secondary: #F8EDFA;
+      --card-icon-primary: #BB1CDB;
+      --card-icon-secondary: #CF5CF2;
+      @include default;
+    }
+
+    &--bug {
+      --card-border: #ADDE68;
+      --card-body-primary: #8DBD4F;
+      --card-body-secondary: #99C750;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #9ECC1F 0%, #75A632 100%);
+      --card-progress-bar: linear-gradient(90deg, #528013 0%, #7FBA20 100%);
+      --card-text-primary: #303329;
+      --card-text-secondary: #3D4037;
+      --card-icon-primary: #75BD09;
+      --card-icon-secondary: #9CD61E;
+      @include default;
+    }
+
+    &--normal {
+      --card-border: #DDDED3;
+      --card-body-primary: #C3C4B5;
+      --card-body-secondary: #D1D0BE;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #CBCCB8 0%, #B0B294 100%);
+      --card-progress-bar: linear-gradient(90deg, #8B8C75 0%, #B1B291 100%);
+      --card-text-primary: #21231A;
+      --card-text-secondary: #313328;
+      --card-icon-primary: #999987;
+      --card-icon-secondary: #CACCBA;
+      @include default;
+    }
+
+    &--ground {
+      --card-border: #AD865F;
+      --card-body-primary: #8A5E37;
+      --card-body-secondary: #966941;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #B06523 0%, #7A502B 100%);
+      --card-progress-bar: linear-gradient(90deg, #663B14 0%, #99581F 100%);
+      --card-text-primary: #FFFFFF;
+      --card-text-secondary: #F0E8E4;
+      --card-icon-primary: #B25F1B;
+      --card-icon-secondary: #B88153;
+      @include default;
+    }
+
+    &--fighting {
+      --card-border: #AD4F40;
+      --card-body-primary: #84382C;
+      --card-body-secondary: #9C453A;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #A8372F 0%, #6B2316 100%);
+      --card-progress-bar: linear-gradient(90deg, #611B0F 0%, #8C1D15 100%);
+      --card-text-primary: #FFFFFF;
+      --card-text-secondary: #F2DDDA;
+      --card-icon-primary: #BA1826;
+      --card-icon-secondary: #C45543;
+      @include default;
+    }
+
+    &--flying {
+      --card-border: #A5ABF2;
+      --card-body-primary: #7F93F5;
+      --card-body-secondary: #90A1F5;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #94A6FF 0%, #4B5EC9 100%);
+      --card-progress-bar: linear-gradient(90deg, #3648B2 0%, #526BEB 100%);
+      --card-text-primary: #17171A;
+      --card-text-secondary: #202126;
+      --card-icon-primary: #3B55D9;
+      --card-icon-secondary: #8F98FF;
+      @include default;
+    }
+
+    &--steel {
+      --card-border: #BDC6D9;
+      --card-body-primary: #9FABC4;
+      --card-body-secondary: #ABB9D6;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #99A9CC 0%, #798AAD 100%);
+      --card-progress-bar: linear-gradient(90deg, #54668C 0%, #778CB8 100%);
+      --card-text-primary: #171819;
+      --card-text-secondary: #2B2E33;
+      --card-icon-primary: #77859E;
+      --card-icon-secondary: #8FA4C9;
+      @include default;
+    }
+
+    &--rock {
+      --card-border: #BFA856;
+      --card-body-primary: #B89A3B;
+      --card-body-secondary: #C4A23B;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #CC9E14 0%, #8C7023 100%);
+      --card-progress-bar: linear-gradient(90deg, #7A621F 0%, #B28809 100%);
+      --card-text-primary: #191917;
+      --card-text-secondary: #2B2A23;
+      --card-icon-primary: #AB8818;
+      --card-icon-secondary: #CC9B14;
+      @include default;
+    }
+
+    &--ice {
+      --card-border: #9AF5F2;
+      --card-body-primary: #73DEDA;
+      --card-body-secondary: #70E8E4;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #61F2E6 0%, #26BFB8 100%);
+      --card-progress-bar: linear-gradient(90deg, #179993 0%, #33CCBF 100%);
+      --card-text-primary: #171919;
+      --card-text-secondary: #242B2B;
+      --card-icon-primary: #12B2B2;
+      --card-icon-secondary: #3DD9D6;
+      @include default;
+    }
+
+    &--dragon {
+      --card-border: #5462BF;
+      --card-body-primary: #293587;
+      --card-body-secondary: #3648A3;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #4751BF 0%, #1D2E80 100%);
+      --card-progress-bar: linear-gradient(90deg, #0C1C66 0%, #16229E 100%);
+      --card-text-primary: #FFFFFF;
+      --card-text-secondary: #DCDAF2;
+      --card-icon-primary: #0E248F;
+      --card-icon-secondary: #4C64D9;
+      @include default;
+    }
+
+    &--fairy {
+      --card-border: #FABBEA;
+      --card-body-primary: #F794DE;
+      --card-body-secondary: #FFA3EE;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #FF99CC 0%, #F76AC8 100%);
+      --card-progress-bar: linear-gradient(90deg, #E545B0 0%, #FF73D2 100%);
+      --card-text-primary: #191719;
+      --card-text-secondary: #403040;
+      --card-icon-primary: #FA57C4;
+      --card-icon-secondary: #FAAFE7;
+      @include default;
+    }
+
+    &--psychic {
+      --card-border: #FF9EA6;
+      --card-body-primary: #F77C86;
+      --card-body-secondary: #F78D99;
+      --card-image-bg: radial-gradient(50% 100% at 50% 50%, #FF7A8A 0%, #ED555F 100%);
+      --card-progress-bar: linear-gradient(90deg, #ED3B47 0%, #FF6375 100%);
+      --card-text-primary: #191717;
+      --card-text-secondary: #332628;
+      --card-icon-primary: #F2494E;
+      --card-icon-secondary: #FF8C9A;
+      @include default;
+    }
+}
+

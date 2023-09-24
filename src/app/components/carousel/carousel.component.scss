@@ -1,0 +1,60 @@
+:host {
+  width: 100%;
+  height: 100%;
+
+  .carousel-wrap{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .carousel {
+    width: 300px;
+    border-radius: 16px;
+    position: relative;
+
+    .swiper-slide-active {
+      border-radius: var(--card-border-radius);
+      box-shadow: 0px 0px 20px 1px var(--card-body-primary);
+    }
+
+
+  &-options {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: -45px;
+    left: 0;
+    right: 0;
+    color: var(--text-primary);
+
+    &-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    button {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+
+      i-feather {
+        color: var(--text-primary);
+        transition: 0.2s;
+      }
+
+      &:hover {
+        i-feather {
+          transform: scale(1.2);
+          filter: drop-shadow(0px 0px 1px var(--text-primary));
+        }
+      }
+    }
+  }
+}
+}
