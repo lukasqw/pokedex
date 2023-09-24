@@ -1,8 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CardModule } from './components/card/card.module';
 import { register } from 'swiper/element/bundle';
 import { BodyComponent } from './components/body/body.component';
@@ -15,6 +16,11 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderInterceptor } from './core/interceptors/loader.interceptor';
+import { SearchComponent } from './components/header/components/search/search.component';
+import { LogoComponent } from './components/header/components/logo/logo.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { AngularSvgIconPreloaderModule } from 'angular-svg-icon-preloader';
+import { OptionsComponent } from './components/header/components/options/options.component';
 
 register();
 
@@ -27,14 +33,23 @@ register();
     FooterComponent,
     CarouselComponent,
     LoaderComponent,
+    SearchComponent,
+    LogoComponent,
+    OptionsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     IconsModule,
     CardModule,
     SwiperDirective,
+    AngularSvgIconModule.forRoot(),
+    AngularSvgIconPreloaderModule.forRoot({
+      configUrl: '../../../assets/icons/svg-icons-config.json',
+    }),
   ],
   providers: [
     {

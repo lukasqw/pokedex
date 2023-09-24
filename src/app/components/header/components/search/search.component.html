@@ -1,0 +1,11 @@
+<div class="search">
+  <form class="search-wrap" [formGroup]="form" (submit)="onSubmit()">
+    <button>
+      <i-feather size="18" name="search"></i-feather>
+    </button>
+    <input formControlName="search" type="text" placeholder="search" />
+    <button type="button" (click)="clear()">
+      <i-feather size="18" name="x"></i-feather>
+    </button>
+  </form>
+</div>

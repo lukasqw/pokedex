@@ -1,3 +1,4 @@
+import { SearchComponent } from './../components/header/components/search/search.component';
 import { PokeApiService } from './http/poke-api.service';
 import { Injectable } from '@angular/core';
 import { ThemeEnum } from '../Enus/theme.enum';
@@ -23,7 +24,11 @@ export class ControllerService {
     return this.pokemonsPagination.results;
   }
 
-  getListPokemons() {
+  getListPokemons(reset = false) {
+    if (reset) {
+      this.pokemonsPagination = new PokemonPagination();
+    }
+
     this.pokeApiService
       .getListPokemons(this.pokemonsPagination.next)
       .subscribe((pokePagination) => {
@@ -38,6 +43,15 @@ export class ControllerService {
             );
           })
         );
+      });
+  }
+
+  searchPokemon(pokemonName: string) {
+    this.pokeApiService
+      .getPokemon(pokemonName)
+      .subscribe((pokemon: Pokemon) => {
+        const pokemonUrl = new pokemonUrlModel(pokemon.name, '', pokemon);
+        this.pokemonsPagination.results = [pokemonUrl];
       });
   }
 }

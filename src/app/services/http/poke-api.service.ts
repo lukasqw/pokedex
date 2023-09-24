@@ -22,7 +22,6 @@ export class PokeApiService {
   };
 
   getListPokemons(url: string): Observable<PokemonPagination> {
-    console.log(environment);
     url = url
       ? url
       : `${this.apiURL}/pokemon?limit=${environment.pokemonLimit}`;
@@ -39,15 +38,17 @@ export class PokeApiService {
         const sprAni =
           item.sprites.versions['generation-v']['black-white'].animated;
 
+        const spritesBasic = item.sprites;
+
         const sprites = new Sprites(
-          sprAni.back_default,
-          sprAni.back_female,
-          sprAni.back_shiny,
-          sprAni.back_shiny_female,
-          sprAni.front_default,
-          sprAni.front_female,
-          sprAni.front_shiny,
-          sprAni.front_shiny_female
+          sprAni.back_default || spritesBasic.back_default,
+          sprAni.back_female || spritesBasic.back_female,
+          sprAni.back_shiny || spritesBasic.back_shiny,
+          sprAni.back_shiny_female || spritesBasic.back_shiny_female,
+          sprAni.front_default || spritesBasic.front_default,
+          sprAni.front_female || spritesBasic.front_female,
+          sprAni.front_shiny || spritesBasic.front_shiny,
+          sprAni.front_shiny_female || spritesBasic.front_shiny_female
         );
 
         const types = item.types.map((type: any) => {
@@ -92,8 +93,7 @@ export class PokeApiService {
         if (descEN.length > 0) {
           return this.formatDescription(descEN[0].flavor_text);
         }
-
-        return '';
+        return 'Pokémon are varied creatures with different types and abilities, used in battles and collected by trainers in the Pokémon world.';
       })
     );
   }

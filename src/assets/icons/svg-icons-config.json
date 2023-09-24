@@ -1,6 +1,10 @@
 {
   "iconImageFiles": [
     {
+      "iconName": "logo",
+      "iconPath": "/assets/icons/logo.svg"
+    },
+    {
 			"iconName": "pokemon-bug",
 			"iconPath": "/assets/icons/icon-bug.svg"
 		},

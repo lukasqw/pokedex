@@ -24,9 +24,8 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   @ViewChild('mainElement')
   mainElement!: ElementRef;
   objectKeys = Object.keys;
-  pokemonsUrlSlider: pokemonUrlModel[] = [];
   activeIndex = 0;
-  maxIndexShow = 10;
+  maxIndexShow = this.isMobile ? 2 : 8;
   indexRightScroll = 6;
 
   public config: SwiperOptions = {
@@ -55,9 +54,17 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   constructor(private controllerService: ControllerService) {}
 
+  get pokemonsUrlSlider(): pokemonUrlModel[] {
+    return this.controllerService.resultPokemonList;
+  }
+
+  get isMobile(): boolean {
+    console.log(window.innerWidth < 768);
+    return window.innerWidth < 768;
+  }
+
   ngOnInit(): void {
     this.controllerService.getListPokemons();
-    this.pokemonsUrlSlider = this.controllerService.resultPokemonList;
   }
 
   ngAfterViewInit(): void {
@@ -67,6 +74,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
+    this.updateMaxIndexShow();
     this.updateScaleCard(window.innerWidth);
   }
 
@@ -75,10 +83,11 @@ export class CarouselComponent implements OnInit, AfterViewInit {
       'transitionEnd',
       (index: any) => {
         this.activeIndex = index.activeIndex;
-        if (
-          this.activeIndex >
+        const rightIndex = Math.abs(
           this.pokemonsUrlSlider.length - this.indexRightScroll
-        ) {
+        );
+
+        if (this.activeIndex > rightIndex) {
           this.controllerService.getListPokemons();
         }
       }
@@ -94,6 +103,10 @@ export class CarouselComponent implements OnInit, AfterViewInit {
       return true;
     }
     return false;
+  }
+
+  updateMaxIndexShow() {
+    this.maxIndexShow = this.isMobile ? 2 : 8;
   }
 
   updateScaleCard(windowWidth: number) {

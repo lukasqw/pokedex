@@ -18,15 +18,23 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.pokemon.name = this.pokemon.name ? this.pokemon.name : this.name;
     if (this.pokemon.name) {
+      if (this.pokemon.id && !this.pokemon.description) {
+        return this.updateDescription();
+      }
+
       this.pokeApiService.getPokemon(this.pokemon.name).subscribe((data) => {
         this.pokemon = data;
-        this.pokeApiService
-          .getPokemonSpecie(this.pokemon.name)
-          .subscribe((description) => {
-            this.pokemon.description = description;
-            this.pokemonChange.emit(this.pokemon);
-          });
+        this.updateDescription();
       });
     }
+  }
+
+  updateDescription() {
+    this.pokeApiService
+      .getPokemonSpecie(this.pokemon.name)
+      .subscribe((description) => {
+        this.pokemon.description = description;
+        this.pokemonChange.emit(this.pokemon);
+      });
   }
 }
